@@ -2,10 +2,13 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
+    @ObservedObject var newsViewModal = NewsViewModal()
 	let greet = Greeting().greeting()
 
 	var body: some View {
-		Text(greet)
+        Text(greet).onAppear {
+            newsViewModal.loadData()
+        }
 	}
 }
 
