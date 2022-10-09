@@ -7,4 +7,6 @@ expect fun createHttpClient():HttpClient
 
 
 class NetworkClient {
+    val httpClient = createHttpClient()
+
 }
