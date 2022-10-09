@@ -8,3 +8,20 @@ import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 
 
+actual fun createHttpClient(): HttpClient {
+    return iOSClient()
+}
+
+fun iOSClient() = HttpClient(Darwin.create()) {
+    install(ContentNegotiation) {
+        json(Json{
+            prettyPrint = true
+            ignoreUnknownKeys = true
+            explicitNulls = true
+        })
+    }
+    install(Logging) {
+        logger = Logger.DEFAULT
+        level = LogLevel.ALL
+    }
+}
