@@ -23,6 +23,10 @@ class NewsViewModal : ObservableObject, INewsView {
         presenter.attach(view: self)
         return presenter
     }()
+
+    func loadData() {
+        self.presenter.loadNews()
+    }
 }
 
 
