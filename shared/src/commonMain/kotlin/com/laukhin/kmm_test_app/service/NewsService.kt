@@ -13,7 +13,7 @@ class NewsService(private val httpClient: NetworkClient) {
 
     companion object {
          val URL =
-            "https://newsapi.org/v2/everything?q=tesla&from=2022-09-09&sortBy=publishedAt&apiKey=${NetworkConfig.apiKey}"
+            "https://newsapi.org/v2/everything?q=tesla&from=2022-09-10&sortBy=publishedAt&apiKey=${NetworkConfig.apiKey}"
     }
 
 
